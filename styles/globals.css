@@ -1,16 +1,31 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-100;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer components {
+  .intent {
+    @apply flex items-center justify-between max-w-md p-4 mx-auto text-black bg-white rounded-lg cursor-pointer hover:shadow-xl xl:mx-0;
+  }
 
-* {
-  box-sizing: border-box;
+  .sidebar-button {
+    @apply px-4 py-3 border-gray-600 cursor-pointer dark:border-t opacity-80 hover:opacity-100;
+  }
+
+  .sidebar-link {
+    @apply px-2.5 hover:underline cursor-pointer text-blue-500 text-[13px] font-medium;
+  }
+
+  .input-button {
+    @apply flex items-center space-x-2 text-sm font-medium cursor-pointer;
+  }
+
+  .post-button {
+    @apply flex items-center justify-center space-x-2 cursor-pointer hover:bg-black/10 dark:hover:bg-black/20 w-full py-2.5 rounded transition ease-out font-medium;
+  }
 }
